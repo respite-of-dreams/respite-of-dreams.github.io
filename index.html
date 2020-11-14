@@ -121,20 +121,20 @@ var legend = L.control({position: 'bottomleft'});
 
     var div = L.DomUtil.create('div', 'info legend');
     labels = ['<strong>Categories</strong>'],
-    categories = ['Easy','Medium','Difficult'];
+    categories = ['Road Surface','Signage','Line Markings','Roadside Hazards','Other'];
 
     for (var i = 0; i < categories.length; i++) {
+
             div.innerHTML += 
             labels.push(
-                '<i style="background:' + getColor(categories[i] + 1) + '"></i> ' +
-                (categories[i] ? categories[i] : '+'));
-        }
+                '<i class="circle" style="background:' + getColor(categories[i]) + '"></i> ' +
+            (categories[i] ? categories[i] : '+'));
 
+        }
         div.innerHTML = labels.join('<br>');
     return div;
-};
-
-legend.addTo(map);
+    };
+    legend.addTo(map);
   </script>
 </body>
 </html>
