@@ -7,9 +7,15 @@
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
 
-<style> #mapid { height: 180px; }</style>
+<style>html,
+body {
+  height: 100%;
+}
+#map {
+  height: 100%;
+}</style>
 
- <div id="mapid"><script>// center of the map
+<script>// center of the map
 var center = [-33.8650, 151.2094];
 
 // Create the map
@@ -29,4 +35,6 @@ L.marker([-35.8650, 154.2094]).addTo(map);
 var imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Sydney_Opera_House_-_Dec_2008.jpg/1024px-Sydney_Opera_House_-_Dec_2008.jpg',
 imageBounds = [center, [-35.8650, 154.2094]];
 
-     L.imageOverlay(imageUrl, imageBounds).addTo(map);</script></div>
+     L.imageOverlay(imageUrl, imageBounds).addTo(map);</script>
+
+ <div id="mapid"></div>
