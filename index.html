@@ -104,17 +104,7 @@ function getColor(d) {
                d === 'Difficult' ? "#4daf4a";
     }
 
-    function style(feature) {
-        return {
-            weight: 1.5,
-            opacity: 1,
-            fillOpacity: 1,
-            radius: 6,
-            fillColor: getColor(feature.properties.TypeOfIssue),
-            color: "grey"
 
-        };
-    }
     
 var legend = L.control({position: 'bottomleft'});
     legend.onAdd = function (map) {
