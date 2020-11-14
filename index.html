@@ -1,40 +1,33 @@
-<title>Scourge map!</title>
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+<html>
+<head>
+  <title>A Leaflet map!</title>
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
- <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
+  <style>
+    #map{ height: 100% }
+  </style>
+</head>
+<body>
 
-<style>html,
-body {
-  height: 100%;
-}
-#map {
-  height: 100%;
-}</style>
+  <div id="map"></div>
 
-<script>// center of the map
-var center = [-33.8650, 151.2094];
+  <script>
 
-// Create the map
-var map = L.map('map').setView(center, 5);
+  // initialize the map
+  var map = L.map('map').setView([42.35, -71.08], 13);
 
-// Set up the OSM layer
-L.tileLayer(
-  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Data © <a href="http://osm.org/copyright">OpenStreetMap</a>',
-    maxZoom: 18
-  }).addTo(map);
+  // load a tile layer
+  L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
+    {
+      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+      maxZoom: 17,
+      minZoom: 9
+    }).addTo(map);
 
-// add a marker in the given location
-L.marker(center).addTo(map);
-L.marker([-35.8650, 154.2094]).addTo(map);
-
-var imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Sydney_Opera_House_-_Dec_2008.jpg/1024px-Sydney_Opera_House_-_Dec_2008.jpg',
-imageBounds = [center, [-35.8650, 154.2094]];
-
-     L.imageOverlay(imageUrl, imageBounds).addTo(map);</script>
-
- <div id="mapid"></div>
+  </script>
+</body>
+</html>
