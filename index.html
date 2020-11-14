@@ -32,7 +32,7 @@ var map = L.map('map').setView(center, 5);
 
 // Set up the OSM layer
 L.tileLayer(
-  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Sydney_Opera_House_-_Dec_2008.jpg/1024px-Sydney_Opera_House_-_Dec_2008.jpg', {
     attribution: 'Data © <a href="http://osm.org/copyright">OpenStreetMap</a>',
     maxZoom: 18
   }).addTo(map);
@@ -41,8 +41,6 @@ L.tileLayer(
 L.marker(center).addTo(map);
 L.marker([-35.8650, 154.2094]).addTo(map);
 
-var imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Sydney_Opera_House_-_Dec_2008.jpg/1024px-Sydney_Opera_House_-_Dec_2008.jpg',
-  imageBounds = [center, [-35.8650, 154.2094]];
 
 L.imageOverlay(imageUrl, imageBounds).addTo(map);
 L.imageOverlay(imageUrl, imageBounds).bringToFront();
