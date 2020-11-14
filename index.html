@@ -106,14 +106,12 @@ var legend = L.control({position: 'bottomleft'});
     labels = ['<strong>Legend</strong>'],
     categories = ['Easy','Medium','Hard'];
 
-    for (var i = 0; i < categories.length; i++) {
+  
 
             div.innerHTML += 
-            labels.push(
-                '<i class="circle" style="background:' + getColor(categories[i]) + '"></i> ' +
-            (categories[i] ? categories[i] : '+'));
+            labels.push('<i class="circle" style="background:green"></i> + "Green"');
 
-        }
+        
         div.innerHTML = labels.join('<br>');
     return div;
     };
