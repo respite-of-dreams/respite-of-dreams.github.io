@@ -98,24 +98,43 @@ info.onAdd = function (map) {
     this.update();
     return this._div;
 };
+function getColor(d) {
+        return d === 'Easy'  ? "#de2d26" :
+               d === 'Medium'  ? "#377eb8" :
+               d === 'Difficult' ? "#4daf4a";
+    }
 
+    function style(feature) {
+        return {
+            weight: 1.5,
+            opacity: 1,
+            fillOpacity: 1,
+            radius: 6,
+            fillColor: getColor(feature.properties.TypeOfIssue),
+            color: "grey"
+
+        };
+    }
+    
 var legend = L.control({position: 'bottomleft'});
     legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend');
-    labels = ['<strong>Legend</strong>'],
-    categories = ['Easy','Medium','Hard'];
+    labels = ['<strong>Categories</strong>'],
+    categories = ['Easy','Medium','Difficult'];
 
-  
-
+    for (var i = 0; i < categories.length; i++) {
             div.innerHTML += 
-            labels.push('<i class="circle" style="background:green"></i> + "Green"');
+            labels.push(
+                '<i style="background:' + getColor(categories[i] + 1) + '"></i> ' +
+                (categories[i] ? categories[i] : '+'));
+        }
 
-        
         div.innerHTML = labels.join('<br>');
     return div;
-    };
-    legend.addTo(map);
+};
+
+legend.addTo(map);
   </script>
 </body>
 </html>
