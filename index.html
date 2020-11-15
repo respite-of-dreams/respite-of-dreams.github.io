@@ -69,9 +69,9 @@ var blackIcon = new L.Icon({
   shadowSize: [41, 41]
 });
 
-L.marker([151.78, 285.18], {icon: greenIcon}).addTo(map);
-L.marker([188.028, 223.404], {icon:greenIcon}).addTo(map);
-
+var quarry = L.marker([151.78, 285.18], {icon: greenIcon}).addTo(map);
+var fort = L.marker([185.661, 243.434],{icon:greenIcon}).addTo(map);
+var fortCave = L.marker([188.028, 223.404], {icon:greenIcon}).addTo(map);
 L.marker([336.013, 170.501],{icon:redIcon}).addTo(map);
 L.marker([393.754, 229.032],{icon:redIcon}).addTo(map);
 L.marker([356.260, 311.825],{icon:redIcon}).addTo(map);
@@ -83,12 +83,12 @@ L.marker([215.649, 218.401],{icon:yellowIcon}).addTo(map);
 L.marker([263.522, 224.404],{icon:yellowIcon}).addTo(map);
 L.marker([249.39, 174.25],{icon:yellowIcon}).addTo(map);
 L.marker([222.773, 291.689],{icon:yellowIcon}).addTo(map);
-L.marker([185.661, 243.434],{icon:greenIcon}).addTo(map);
-L.marker([185.661, 243.434],{icon:greenIcon}).addTo(map);
+
+
 
 // Stormshield Icon.
 var stormshield = L.marker([107.821, 225.573],{icon:blackIcon}).addTo(map);
-stormshield.bindPopup("<b><center>Stormshield</center></b></br><center>Controlled by the Respite of Dreams.</center>");
+stormshield.bindPopup("<b><center>Respite of Dreams HQ.</center></b></br><center>Controlled by the Respite of Dreams.</center>");
     
 var legend = L.control({ position: "bottomleft" });
 
