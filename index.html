@@ -22,6 +22,41 @@ body {
   width:60%;
   height: 99%;
 }
+/*Legend specific*/
+.legend {
+  padding: 6px 8px;
+  font: 14px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+  /*border-radius: 5px;*/
+  line-height: 24px;
+  color: #555;
+}
+.legend h4 {
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 12px 8px;
+  color: #777;
+}
+
+.legend span {
+  position: relative;
+  bottom: 3px;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 0 8px 0 0;
+  opacity: 0.7;
+}
+
+.legend i.icon {
+  background-size: 18px;
+  background-color: rgba(255, 255, 255, 1);
+}
 
   </style>
 </head>
@@ -92,21 +127,21 @@ L.marker([249.39, 174.25],{icon:yellowIcon}).addTo(map);
 L.marker([222.773, 291.689],{icon:yellowIcon}).addTo(map);
 L.marker([185.661, 243.434],{icon:greenIcon}).addTo(map);
 
-// var legend = L.control({ position: "bottomleft" });
+var legend = L.control({ position: "bottomleft" });
 
-// legend.onAdd = function(map) {
-//   var div = L.DomUtil.create("div", "legend");
-//   div.innerHTML += "<h4>Difficulty</h4>";
-//   div.innerHTML += '<i style="background: #2AAD27"></i><span>Easy</span><br>';
-//   div.innerHTML += '<i style="background: #FFD326"></i><span>Moderate</span><br>';
-//   div.innerHTML += '<i style="background: #CB2B3E"></i><span>Difficult</span><br>';
+legend.onAdd = function(map) {
+  var div = L.DomUtil.create("div", "legend");
+  div.innerHTML += "<h4>Difficulty</h4>";
+  div.innerHTML += '<i style="background: #2AAD27"></i><span>Easy</span><br>';
+  div.innerHTML += '<i style="background: #FFD326"></i><span>Moderate</span><br>';
+  div.innerHTML += '<i style="background: #CB2B3E"></i><span>Difficult</span><br>';
  
   
 
-//   return div;
-// };
+  return div;
+};
 
-// legend.addTo(map);
+legend.addTo(map);
 
   </script>
 </body>
