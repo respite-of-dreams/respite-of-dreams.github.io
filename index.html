@@ -60,6 +60,15 @@ var yellowIcon = new L.Icon({
   shadowSize: [41, 41]
 });
 
+var blackIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
 L.marker([151.78, 285.18], {icon: greenIcon}).addTo(map);
 L.marker([188.028, 223.404], {icon:greenIcon}).addTo(map);
 
@@ -75,7 +84,9 @@ L.marker([263.522, 224.404],{icon:yellowIcon}).addTo(map);
 L.marker([249.39, 174.25],{icon:yellowIcon}).addTo(map);
 L.marker([222.773, 291.689],{icon:yellowIcon}).addTo(map);
 L.marker([185.661, 243.434],{icon:greenIcon}).addTo(map);
-
+L.marker([185.661, 243.434],{icon:greenIcon}).addTo(map);
+L.marker([107.821, 225.573],{icon:blackIcon}).addTo(map);
+    
 var legend = L.control({ position: "bottomleft" });
 
 legend.onAdd = function(map) {
