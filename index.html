@@ -72,8 +72,8 @@ var blackIcon = new L.Icon({
 
 
 // Stormshield Icon.
-var stormshield = L.marker([225.0121436851802, 363.34633640361795],{icon:blackIcon}).addTo(map);
-stormshield.bindPopup("<b><center>Respite of Dreams HQ.</center></b></br><center>Controlled by the Respite of Dreams.</center>");
+var respiteHQ = L.marker([364.34132022238816, 226.00634224853542],{icon:blackIcon}).addTo(map);
+respiteHQ.bindPopup("<b><center>Respite of Dreams HQ.</center></b></br><center>Controlled by the Respite of Dreams.</center>");
     
 var legend = L.control({ position: "bottomleft" });
 
@@ -83,6 +83,7 @@ legend.onAdd = function(map) {
   div.innerHTML += '<i style="background: #2AAD27"></i><span>Easy</span><br>';
   div.innerHTML += '<i style="background: #FFD326"></i><span>Moderate</span><br>';
   div.innerHTML += '<i style="background: #CB2B3E"></i><span>Difficult</span><br>';
+  div.innerHTML += '<i style="background: #0A0A0A"></i><span>Boss</span><br>';
  
   
 
