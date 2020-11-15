@@ -1,73 +1,69 @@
 <html>
-<head>
-  <title>Scourge Territory Map - Respite of Dreams</title>
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
-  <link rel="stylesheet" href="./css/style.css" />
-</head>
-<body>
-
-  <div id="map"></div>
-  <script src="./js/icons.js"></script>
-  <script>
-       var map = L.map('map', {
-        maxZoom: 3,
-        minZoom: 2,
-        zoomSnap: 0.25,
-        crs: L.CRS.Simple
-    }).setView([457, 237], 1);
-
-    map.setMaxBounds(new L.LatLngBounds([300,500], [600,0]));
-
-    var imageUrl = 'https://wow.zamimg.com/images/wow/maps/beta/original/6941.jpg'
-    var imageBounds = [[300,500], [600,0]];
-
-
-    L.imageOverlay(imageUrl,imageBounds).addTo(map);
-
-var lat, lng;
-
-map.addEventListener('mousemove', function(ev) {
-   lat = ev.latlng.lat;
-   lng = ev.latlng.lng;
-});
-
-// Stormshield Icon.
-var respiteHQ = L.marker([367.34132022238816, 222.00634224853542],{icon:whiteIcon}).addTo(map);
-respiteHQ.bindPopup("<b><center>Respite of Dreams HQ.</center></b></br><center>Controlled by the Respite of Dreams.</br>Threat level: Slight.</center>");
-var fort = L.marker([412.3334744004647, 243.49749259941626],{icon:greenIcon}).addTo(map);
-fort.bindPopup("<b><center>Base Watchtower</center></b></br><center>Controlled by the Cult of the Damned.</br>Threat level: Mild.</center>");
-var korlok = L.marker([450.82678615882503, 272.73628304386534],{icon:yellowIcon}).addTo(map);
-korlok.bindPopup("<b><center>Stone Courtyard</center></b></br><center>Controlled by the Cult of the Damned.</br>Threat level: Moderate.</br><strong>Scouting Report: To be scouted.</strong></center>");
-var woodland = L.marker([476.7803543274417, 288.9850047612147],{icon:yellowIcon}).addTo(map); 
-woodland.bindPopup("<b><center>Doomed Woods</center></b></br><center>Controlled by the Cult of the Damned.</br>Threat level: Moderate.</br><strong>Scouting Report: To be scouted.</strong></center>");    
-var brutes = L.marker([510.26311924321635, 294.98264485478296],{icon:redIcon}).addTo(map);
-brutes.bindPopup("<b><center>Stonebrick Hideaway</center></b></br><center>Controlled by the Cult of the Damned.</br>Threat level: Severe.</br><strong>Scouting Report: To be scouted.</strong></center>");    
-var warspear = L.marker([524.006045141482, 238.2549656364502],{icon:redIcon}).addTo(map);
-warspear.bindPopup("<b><center>Burial Grounds</center></b></br><center>Controlled by the Cult of the Damned.</br>Threat level: Severe.</br><strong>Scouting Report: To be scouted.</strong></center>");    
-var ampitheatre = L.marker([500.76800680441454, 173.78033463059185],{icon:blackIcon}).addTo(map);
-ampitheatre.bindPopup("<b><center>Cultists Hideaway</center></b></br><center>The base of the Cult of the Damned.</br>Threat level: Extreme.</br><strong>Scouting Report: To be scouted properly. Powerful necromatic wards can be felt in the immediate vicinity..</strong></center>");    
-var legend = L.control({ position: "bottomleft" });
-
-legend.onAdd = function(map) {
-  var div = L.DomUtil.create("div", "legend");
-  div.innerHTML += "<h4>Difficulty</h4>";
-  div.innerHTML += '<i style="background: #2AAD27"></i><span>Easy</span><br>';
-  div.innerHTML += '<i style="background: #FFD326"></i><span>Moderate</span><br>';
-  div.innerHTML += '<i style="background: #CB2B3E"></i><span>Difficult</span><br>';
-  div.innerHTML += '<i style="background: #0A0A0A"></i><span>Boss</span><br>';
- 
-  
-
-  return div;
-};
-
-legend.addTo(map);
-
-  </script>
-</body>
+	<head>
+		<title>Scourge Territory Map - Respite of Dreams</title>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+			integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+			crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+			integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+			crossorigin=""></script>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<div id="map"></div>
+		<script src="./js/icons.js"></script>
+		<script>
+			var map = L.map('map', {
+			 maxZoom: 3,
+			 minZoom: 2,
+			 zoomSnap: 0.25,
+			 crs: L.CRS.Simple
+			}).setView([457, 237], 1);
+			
+			map.setMaxBounds(new L.LatLngBounds([300,500], [600,0]));
+			
+			var imageUrl = 'https://wow.zamimg.com/images/wow/maps/beta/original/6941.jpg'
+			var imageBounds = [[300,500], [600,0]];
+			
+			
+			L.imageOverlay(imageUrl,imageBounds).addTo(map);
+			
+			var lat, lng;
+			
+			map.addEventListener('mousemove', function(ev) {
+			  lat = ev.latlng.lat;
+			  lng = ev.latlng.lng;
+			});
+			
+			// Stormshield Icon.
+			var respiteHQ = L.marker([367.34132022238816, 222.00634224853542],{icon:whiteIcon}).addTo(map);
+			respiteHQ.bindPopup("<b><center>Respite of Dreams HQ.</center></b></br><center>Controlled by the Respite of Dreams.</br>Threat level: Slight.</center>");
+			var fort = L.marker([412.3334744004647, 243.49749259941626],{icon:greenIcon}).addTo(map);
+			fort.bindPopup("<b><center>Base Watchtower</center></b></br><center>Controlled by the Cult of the Damned.</br>Threat level: Mild.</center>");
+			var korlok = L.marker([450.82678615882503, 272.73628304386534],{icon:yellowIcon}).addTo(map);
+			korlok.bindPopup("<b><center>Stone Courtyard</center></b></br><center>Controlled by the Cult of the Damned.</br>Threat level: Moderate.</br><strong>Scouting Report: To be scouted.</strong></center>");
+			var woodland = L.marker([476.7803543274417, 288.9850047612147],{icon:yellowIcon}).addTo(map); 
+			woodland.bindPopup("<b><center>Doomed Woods</center></b></br><center>Controlled by the Cult of the Damned.</br>Threat level: Moderate.</br><strong>Scouting Report: To be scouted.</strong></center>");    
+			var brutes = L.marker([510.26311924321635, 294.98264485478296],{icon:redIcon}).addTo(map);
+			brutes.bindPopup("<b><center>Stonebrick Hideaway</center></b></br><center>Controlled by the Cult of the Damned.</br>Threat level: Severe.</br><strong>Scouting Report: To be scouted.</strong></center>");    
+			var warspear = L.marker([524.006045141482, 238.2549656364502],{icon:redIcon}).addTo(map);
+			warspear.bindPopup("<b><center>Burial Grounds</center></b></br><center>Controlled by the Cult of the Damned.</br>Threat level: Severe.</br><strong>Scouting Report: To be scouted.</strong></center>");    
+			var ampitheatre = L.marker([500.76800680441454, 173.78033463059185],{icon:blackIcon}).addTo(map);
+			ampitheatre.bindPopup("<b><center>Cultists Hideaway</center></b></br><center>The base of the Cult of the Damned.</br>Threat level: Extreme.</br><strong>Scouting Report: To be scouted properly. Powerful necromatic wards can be felt in the immediate vicinity..</strong></center>");    
+			var legend = L.control({ position: "bottomleft" });
+			
+			legend.onAdd = function(map) {
+			var div = L.DomUtil.create("div", "legend");
+			div.innerHTML += "<h4>Difficulty</h4>";
+			div.innerHTML += '<i style="background: #2AAD27"></i><span>Easy</span><br>';
+			div.innerHTML += '<i style="background: #FFD326"></i><span>Moderate</span><br>';
+			div.innerHTML += '<i style="background: #CB2B3E"></i><span>Difficult</span><br>';
+			div.innerHTML += '<i style="background: #0A0A0A"></i><span>Boss</span><br>';
+      return div;
+			};
+			
+			legend.addTo(map);
+			
+		</script>
+	</body>
 </html>
